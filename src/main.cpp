@@ -2577,7 +2577,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "March 18, 2014, The Associated Press: Putin Signs Treaty To Add Crimea To Map Of Russia.";
+        const char* pszTimestamp = "2.Oct na otoku Solta";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2590,9 +2590,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1395376332;
+        block.nTime    = 1412276864;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 13577531;
+        block.nNonce   = 0;
 
         //// debug print
         block.print();
@@ -2601,7 +2601,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("fdcdf1b375026822dc0b13a3a8fea97f48d1fb720858dbfb176e7d338cdf619b"));
+        assert(block.hashMerkleRoot == uint256("7481428e154423f7dce415fa103c7c33636e8fbe6fcf4815003ce0e43c281d7e")); //zacelo se je fd.. brez 0x hm..
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file
